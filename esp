@@ -1,3 +1,11 @@
+-- auto-generated: run after main.lua
+local Window   = getgenv().EH_Window
+local Library  = getgenv().EH_Library
+local Utility  = getgenv().EH_Utility
+local EH_Notify = getgenv().EH_Notify
+
+MainTab = nil
+
 MainTab = Window:Tab("esp")
 
 ESPCtrl = MainTab:Section("control", "Left")
@@ -48,3 +56,6 @@ ESPHitMark = MainTab:Section("hit marker", "Right")
 ESPHitMark:Toggle({Title = "hit marker", Flag = "HitMarker", Default = false})
 ESPHitMark:Slider({Title = "fade time", Flag = "HitMarkerFade", Symbol = "s", Default = 4, Min = 1, Max = 20, Decimals = 1})
 ESPHitMark:Toggle({Title = "marker color", Flag = "HitMarkerColTog", Default = false}):Colorpicker({Color = Color3.fromRGB(255, 255, 255), Flag = "HitMarkerCol"})
+
+
+getgenv().MainTab   = MainTab
